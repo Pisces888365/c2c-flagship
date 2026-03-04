@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass To Coast | Sovereign Concierge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gold-text {
+            background: linear-gradient(to bottom, #fceabb, #f8b500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans selection:bg-yellow-500">
+    <nav class="p-8 flex justify-between items-center fixed w-full z-50">
+        <div class="text-xl font-bold tracking-[0.2em] uppercase gold-text">Compass To Coast</div>
+        <button onclick="openModal()" class="glass px-6 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-white/10 transition">Request Access</button>
+    </nav>
+
+    <main class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-6xl md:text-8xl font-light mb-6 tracking-tighter">Travel at the speed of <span class="italic">thought.</span></h1>
+        <p class="text-gray-500 max-w-xl text-lg mb-10 font-light">The world's first Curated Technology Interface for the Sovereign CEO. AI-grounded logistics meets legacy-grade security.</p>
+        
+        <div class="w-full max-w-2xl glass rounded-full p-2 flex items-center">
+            <input type="text" placeholder="Where does your lineage go next?" class="bg-transparent flex-grow px-6 outline-none text-white placeholder:text-gray-600">
+            <button class="bg-white text-black px-8 py-3 rounded-full text-sm font-bold hover:bg-yellow-500 transition uppercase">Consult AI</button>
+        </div>
+    </main>
+
+    <div id="inviteModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-black/90 backdrop-blur-md">
+        <div class="glass max-w-md w-full p-10 rounded-[40px] relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-500">&times;</button>
+            <h2 class="text-3xl font-light mb-2">Request Access</h2>
+            <p class="text-gray-500 text-sm mb-8">Identity verification required for Sovereign Tier access.</p>
+            <input type="email" placeholder="Private Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl mb-4 outline-none focus:border-yellow-500 transition">
+            <button class="w-full bg-yellow-600 p-4 rounded-xl font-bold text-black uppercase tracking-widest">Submit Credentials</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('inviteModal').classList.remove('hidden'); }
+        function closeModal() { document.getElementById('inviteModal').classList.add('hidden'); }
+    </script>
+</body>
+</html>
